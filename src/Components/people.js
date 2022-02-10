@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
-
+import React from 'react';
+// import { Link } from "react-router-dom";
 
 const People = () => {
-    const [user, setUser] = useState('');
-
+    // const [user, setUser] = useState('');
 
 return (
     <div>
-        <heading>Select your teacher:</heading>;
+        <h1>Select your teacher:</h1>
     </div>
 )
 

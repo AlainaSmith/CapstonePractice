@@ -1,0 +1,9 @@
+.headerLinks {
+    display: flex;
+    justify-content: center;
+  
+}
+
+
+/* this header.css is also associated with your about/people/home page because it is being
+rendered in the app.js whcih tags all of those together */
