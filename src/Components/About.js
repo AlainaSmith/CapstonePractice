@@ -30,28 +30,28 @@ const About = () => {
 
         <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/ELpfYCZa87g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       
-      <h3>
+      <h3 id="educators">
           Subjects
       </h3>
         <main className="mainSubject">
         <form className="formSubject">
-            <div>
+            <div className="circleText" id="science">
                 <h4>
                     The Science of Neuroplasticity
                 </h4>
             </div>
         </form>
        <form className="formSubject">
-           <div>
+            <div className="circleText" id="environment">
                <h4>
-                   Mindfulness
+               Environmental Health
                </h4>
            </div>
        </form>
        <form className="formSubject">
-           <div>
+            <div className="circleText" id="mind">
                <h4>
-                   Environmental Health
+                    Mindfulness
                </h4>
            </div>
        </form>
@@ -73,14 +73,21 @@ const About = () => {
                 <FcBookmark />
             </div>
         </form>
+
        <form className="formTeachers" id="Robin">
            <div>
+           <NavLink exact to='/Robin'>
             <img src="https://i.guim.co.uk/img/media/4cbb396a030edbcfd2c9ba9236000fee2d696c8b/0_386_1744_1046/master/1744.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=27da09a796bb7a4909b94f501af885e6" width="300" height="215"/>
+            </NavLink>
                <h4>
                    Dr. Robin Wall Kimmerer
                </h4>
+               <div id='icon'>
+                    <AiOutlineHeart /></div>
+                <FcBookmark />
            </div>
        </form>
+
        <form className="formTeachers" id="Sam">
            <div>
                <img src="https://i.guim.co.uk/img/media/ff7c7c7b51425a332c7a9fd517c81c74de09bf42/0_1259_4033_2418/master/4033.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=35b33e093213c69960dfbf5e6167f567" width="300" height="215"></img>
@@ -97,27 +104,27 @@ const About = () => {
         <form className="formTeachersTwo" id="andrewHuberman">
             <div>
             <NavLink exact to='/Huberman'>
-            <img src = "https://i0.wp.com/hubermanlab.com/wp-content/uploads/2021/05/Huberman-Lab-Podcast-Intro-1920x1080-1.jpeg?resize=768%2C432&ssl=1" width="300" height="215"/>
+            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSuWc5lhYm0sRkin18ZltZ7Jz6yAqSpg1FVw&usqp=CAU" width="300" height="215"/>
             </NavLink>
            
                 <h4>
-                    Dr. Andrew Huberman
+                    Rachel Brathen
                 </h4>
             </div>
         </form>
        <form className="formTeachers" id="Robin">
            <div>
-            <img src="https://i.guim.co.uk/img/media/4cbb396a030edbcfd2c9ba9236000fee2d696c8b/0_386_1744_1046/master/1744.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=27da09a796bb7a4909b94f501af885e6" width="300" height="215"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCAhMeFCcD_LZVbamQta23Qa9IQRZU6znkg&usqp=CAU" width="300" height="215"/>
                <h4>
-                   Dr. Robin Wall Kimmerer
+                   Dr. Joe Dispenza
                </h4>
            </div>
        </form>
        <form className="formTeachers" id="Sam">
            <div>
-               <img src="https://i.guim.co.uk/img/media/ff7c7c7b51425a332c7a9fd517c81c74de09bf42/0_1259_4033_2418/master/4033.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=35b33e093213c69960dfbf5e6167f567" width="300" height="215"></img>
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOHfP6M6oaDZpLM6eXyiqLcbCiUabO7pL9Q&usqp=CAU" width="300" height="215"></img>
                <h4>
-                   Sam Harris
+                   Sarah Wu
                </h4>
            </div>
        </form>

@@ -6,6 +6,8 @@ import People from './people';
 import Register from "./Register";
 import Login from "./Login";
 import AndrewHuberman from "./Huberman";
+import Robin from "./Robin";
+
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
        <Route path='/Register' element={<Register/>} />
        <Route path='/Login' element={<Login/>} />
        <Route path='/Huberman' element={<AndrewHuberman/>}/>
+       <Route path='/Robin' element={<Robin/>}/>
        </Routes>
        
     {/* <FrontPage /> */}
