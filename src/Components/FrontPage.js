@@ -7,15 +7,17 @@ import {useFormik} from 'formik'
 import axios from 'axios';
 import Login from "./Login";
 import Register from "./Register";
-
+import Header from "./common/Header";
 
 
 const FrontPage = () => {
     return (
       <div className="App">
+        <Header />
           <img src={brain} className="App-logo" alt="logo" />
           <Login />
           <Register />
+          
     </div>
     );
   }

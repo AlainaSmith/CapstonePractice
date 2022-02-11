@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 // import { useFormik } from "formik";
 import axios from "axios"
+import './Register.css'
 
 const Register = () => {
 // const {register, handleSubmit, errors} = useFormik();
@@ -47,7 +48,7 @@ const validate = (values) => {
 return(
     <>
     <h2>Register</h2>
-    <form>
+    <form className="registerForm">
     <input 
         type="text"
         name="First Name"

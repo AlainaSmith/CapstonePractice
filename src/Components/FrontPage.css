@@ -14,14 +14,14 @@
 }
 
 body {
-  background-color: #431cee18;
+  background-color: #545b97;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   /* align-items: center; */
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(237, 237, 248)
+  color: rgb(11, 11, 17)
 }
 
 .Here-link {
@@ -37,7 +37,7 @@ body {
   }
 }
 
-
+/* 
 body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -56,4 +56,4 @@ body {
     background-position: 0% 50%;
   }
 }
-
+ */

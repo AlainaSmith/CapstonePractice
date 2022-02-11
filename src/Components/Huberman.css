@@ -1,0 +1,29 @@
+.hubermanHeader{
+    display:flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.hubermaninput{
+display: flex;
+height: 40px;
+width: 300px;
+position: relative;
+left: 570px;
+
+}
+
+.hubermanButton{
+    display: flex;
+    position: relative;
+    left:660px;
+    font-size: 20px;
+}
+

@@ -1,6 +1,8 @@
 import React, {useState} from "react"
 // import { useFormik } from "formik";
 import axios from "axios"
+import './Login.css'
+
 
 const Login = () => {
 const [emailAddress, setEmailAddress] = useState('')
@@ -15,8 +17,8 @@ const handleSubmit = () => {
 return(
     <>
     <h2>Login</h2>
-<form>
-      <input 
+<form className="loginForm">
+      <input
         type="text"
         name="emailAddress"
         placeholder="Email Address"

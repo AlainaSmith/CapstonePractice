@@ -8,10 +8,7 @@ const Header = () => {
         <nav className='headerLinks'>
         <NavLink activeStyle={activeStyle} exact to='/FrontPage'>Home</NavLink>
         {" | "}
-        <NavLink activeStyle={activeStyle} exact to='/people'>People</NavLink>
-        {" | "}
         <NavLink activeStyle={activeStyle} exact to='/About'>About</NavLink>
-        {" | "}
         </nav>
         </>
     )
