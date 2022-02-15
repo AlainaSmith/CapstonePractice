@@ -1,10 +1,9 @@
 import React, {useState} from "react"
-// import { useFormik } from "formik";
 import axios from "axios"
 import './Register.css'
 
 const Register = () => {
-// const {register, handleSubmit, errors} = useFormik();
+
 // const mySubmit = data => console.log(data);
 const [firstName, setFirstName] = useState('')
 const [lastName, setLastName] = useState('')
@@ -12,8 +11,10 @@ const [email_address, setEmailAddress] = useState('')
 const [password, setPassword] = useState('')
 
 
-const handleSubmit = () => {
-    axios.post('http://localstorage:3000', {
+const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('submitted')
+    axios.post('http://localhost:3500/register', {
     firstName: firstName, 
     lastName: lastName,
     email_address: email_address,
@@ -22,7 +23,7 @@ const handleSubmit = () => {
 .then((res) =>{
     console.log(res)
 })
-    }
+ }
 
 
 const validate = (values) => {
@@ -73,7 +74,7 @@ return(
       placeholder="Password"
       onChange={(e)=>{setPassword(e.target.value)}}
       />
-      <button type="submit" onSubmit={handleSubmit}>Register</button>
+      <button type="button" onClick={handleSubmit}>Register</button>
     </form>
     </>
     )

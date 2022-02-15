@@ -14,10 +14,11 @@ const FrontPage = () => {
     return (
       <div className="App">
         <Header />
-          <img src={brain} className="App-logo" alt="logo" />
+          <div className="all">
+          {/* <img src={brain} className="App-logo" alt="logo" /> */}
           <Login />
           <Register />
-          
+          </div>
     </div>
     );
   }

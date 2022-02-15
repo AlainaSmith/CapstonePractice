@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-// import { useFormik } from "formik";
+
 import axios from "axios"
 import './Login.css'
 
@@ -7,13 +7,18 @@ import './Login.css'
 const Login = () => {
 const [emailAddress, setEmailAddress] = useState('')
 const [password, setPassword] = useState('')
+const [loginStatus, setLoginStatus] = useState('')
 
-const handleSubmit = () => {
-    axios.post('http://localhost:3000/login', {
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+    axios.post('http://localhost:3500/login', {
         emailAddress: emailAddress,
         password: password
     })
-}
+    .then((res)=>{console.log(res.data)})
+  }
+console.log(emailAddress)
 return(
     <>
     <h2>Login</h2>
@@ -30,8 +35,9 @@ return(
         placeholder="Password"
         onChange={(e)=>{setPassword(e.target.value)}}
       />
-      <button type="submit" onSubmit={handleSubmit}>Login</button>
+      <button type="button" onClick={handleSubmit}>Login</button>
     </form>
+    <h1>{loginStatus}</h1>
     </>
     )
 }
@@ -39,4 +45,3 @@ return(
 export default Login
 
 
-// <form onSubmit={handleSubmit(mySubmit)}>

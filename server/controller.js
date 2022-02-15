@@ -1,6 +1,5 @@
 const sequelize = require('./seed')
 
-
 module.exports = {
     getUsers: (req, res) => {
         sequelize.query(`SELECT * FROM users;`)
@@ -17,6 +16,14 @@ module.exports = {
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
+
+
+
+
+
+
+
+
 
     createEmailSubscriber: (req, res) => {
         let {firstName, lastName, email_address} = req.body
@@ -89,4 +96,18 @@ createFavorites: (req, res) => {
     //     ;`)
     //     .then(dbRes => res.status(200).send(dbRes[0]))
     //     .catch(err => console.log(err))
+    // },
+
+
+
+
+    // addConcerts: async (req, res) => {
+    //     console.log('hit add concerts')
+    //     const {band_name, location, date} = req.body
+    //     sequelize.query(`
+    //     INSERT INTO concerts 
+    //     (band_name, location, date)
+    //     VALUES ('${band_name}', '${location}', '${date}')
+    //     ;`)
+    //     .then(dbRes=> res.status(200).send(dbRes[0]))
     // },

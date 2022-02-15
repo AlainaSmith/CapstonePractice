@@ -2,17 +2,35 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000 ;
-const sequelize = require('sequelize')
+const PORT = process.env.PORT || 3500 ;
+const Sequelize = require('sequelize')
 // const {connect} = require('testConnection')
 const bcrypt = require('bcrypt')
+const {seed} = require("./seed") 
+const {CONNECTION_STRING} = process.env
+
+const sequelize = new Sequelize(CONNECTION_STRING, {
+  dialect: 'postgres',
+  dialectOptions: {
+          ssl: {
+              rejectUnauthorized: false
+          }
+  }
+})
+
 
 //Middleware
 app.use(express.json());
 app.use(cors());
 
 //Put endpoints here
+
+app.post('/seed', seed)
+console.log(seed)
+
+
 app.post('/register', async (req, res) => {
+  console.log('hit register endpoint')
   const {firstName, lastName, email_address, password} = req.body
   const checkUser = await sequelize.query(`
   SELECT * FROM users WHERE email_address = '${email_address}'
@@ -28,41 +46,41 @@ app.post('/register', async (req, res) => {
     VALUES (
       '${firstName}',
       '${lastName}',
-      '${email_address}'
+      '${email_address}',
       '${passwordHash}'
     )
     `)
     const userInfo = await sequelize.query(`
-      SELECT id, firstName, lastName, email_address FROM users WHERE email_address = '${email_address}'
+      SELECT user_id, firstName, lastName, email_address FROM users WHERE email_address = '${email_address}'
     `)
     res.status(200).send(userInfo)
   }
 })
 
 app.post('/login', async (req, res) => {
-  const {email_address, password} = req.body
+  const {emailAddress, password} = req.body
   const validUser = await sequelize.query(`
     SELECT * FROM users WHERE 
-    email_address = '${email_address}'
-    password = '${password}'     
+    email_address = '${emailAddress}' 
+      
   `).catch((err) => console.log(err))
+  if(!validUser[0][0]){
+    res.status(401).send('email address is incorrect')
+  }
+  // if(validUser[0][0].passwordrowCount === 1) 
   console.log(validUser)
-  if(validUser[1].rowCount === 1) {
     if (bcrypt.compareSync(password, validUser[0][0].password)) {
       let object = {
         id: validUser[0][0].id,
-        email_address: validUser[0][0].email_address,
-        password
+        email_address: validUser[0][0].email_address
       }
-      res.status(200).send(object)
+      response.status(200).send(object)
+   
     } else {
-      res.status(401).send('Password is Incorrect')
+      response.status(401).send({message:'Info is Incorrect'})
     }
-  } else {
-    res.status(401).send('Username is Incorrect')
-  }
+   
 })
 
-// connect()
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
